@@ -1,0 +1,35 @@
+{
+  "dependencies": {
+    "@discordjs/uws": "^11.149.1",
+    "discord.js": "github:hydrabolt/discord.js#master",
+    "discord.js-commando": "github:discordjs/Commando#master",
+    "dotenv": "^6.2.0",
+    "erlpack": "github:discordapp/erlpack",
+    "redis": "^2.8.0",
+    "reflect-metadata": "^0.1.13",
+    "typeorm": "^0.2.12",
+    "zlib-sync": "^0.1.4"
+  },
+  "name": "rover",
+  "version": "2.0.0",
+  "main": "src/index.ts",
+  "repository": "https://github.com/evaera/RoVer",
+  "author": "evaera",
+  "license": "Apache-2.0",
+  "scripts": {
+    "test": "echo \"No tests\"",
+    "watch": "tsc-watch --onSuccess \"npm start\"",
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "dev": "docker-compose -f docker-compose.yml -f docker-compose.dev.yml up --build"
+  },
+  "devDependencies": {
+    "@types/dotenv": "^6.1.0",
+    "@types/node": "^10.12.18",
+    "@types/redis": "^2.8.10",
+    "tsc-watch": "^1.0.31",
+    "tslint": "^5.12.1",
+    "tslint-config-standard": "^8.0.1",
+    "typescript": "^3.2.4"
+  }
+}

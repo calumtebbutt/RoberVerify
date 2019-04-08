@@ -1,0 +1,18 @@
+version: '3'
+
+services:
+  redis:
+    image: redis
+    container_name: settings
+    expose:
+      - 6379
+
+  app:
+    build: .
+    ports:
+      - '8080:8080'
+    volumes:
+      - ./src:/home/appuser/app/src:ro
+    environment:
+      - REDIS_SETTINGS=redis://settings
+      - NODE_ENV=production
