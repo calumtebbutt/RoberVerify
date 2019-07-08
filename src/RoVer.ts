@@ -8,7 +8,7 @@ const SHARD_AMOUNT = 'auto'
 export default class RoVer {
   private static shardingManager: ShardingManager
 
-  static initialize (): RoVer {
+  static async initialize (): Promise<RoVer> {
     this.shardingManager = new ShardingManager(
       path.join(__dirname, 'Shard.js'),
       {
@@ -22,10 +22,9 @@ export default class RoVer {
       )
     ))
 
-    this.shardingManager.spawn(
+    await this.shardingManager.spawn(
       SHARD_AMOUNT,
-      SHARD_SPAWN_DELAY,
-      SHARD_WAIT_FOR_READY
+      SHARD_SPAWN_DELAY
     )
 
     return this

@@ -29,7 +29,7 @@ export default class Command extends Commando.Command {
     this.adminOnly = typeof customInfo.adminOnly === 'undefined' ? false : customInfo.adminOnly
   }
 
-  public hasPermission (msg: Commando.CommandMessage): boolean {
+  public hasPermission (msg: Commando.CommandoMessage): boolean {
     const council = Votum.getCouncil(msg.channel.id)
 
     if (this.client.isOwner(msg.author)) {
